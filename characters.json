@@ -33,5 +33,12 @@
     "level": 18,
     "race": 6,
     "class": 11
+  },
+  {
+    "name": "Pissgoblin",
+    "realm": "Nordanaar",
+    "level": 0,
+    "race": "Unknown",
+    "class": "Unknown"
   }
 ]
