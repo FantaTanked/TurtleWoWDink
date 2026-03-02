@@ -31,23 +31,12 @@ body:
     validations:
       required: true
 
-  - type: input
-    id: webhook
-    attributes:
-      label: Discord Webhook URL
-      description: >
-        Create one in Discord: open your server → Server Settings → Integrations → Webhooks → New Webhook.
-        Copy the webhook URL and paste it here.
-      placeholder: "https://discord.com/api/webhooks/1234567890/abcdefgh..."
-    validations:
-      required: true
-
   - type: checkboxes
     id: acknowledgement
     attributes:
       label: Acknowledgement
       options:
         - label: >
-            I understand that my character name, realm, and Discord webhook URL will be stored
+            I understand that my character name and realm will be stored
             in a publicly visible file in this repository.
           required: true

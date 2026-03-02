@@ -13,19 +13,6 @@ import re
 import sys
 from pathlib import Path
 
-from cryptography.fernet import Fernet
-
-
-def get_cipher() -> Fernet:
-    key = os.environ.get("WEBHOOK_ENCRYPTION_KEY", "")
-    if not key:
-        raise RuntimeError("WEBHOOK_ENCRYPTION_KEY secret is not set in the Actions environment.")
-    return Fernet(key.encode())
-
-
-def encrypt_webhook(url: str) -> str:
-    return get_cipher().encrypt(url.encode()).decode()
-
 CHARACTERS_FILE = Path(__file__).parent.parent / "characters.json"
 RESULT_FILE = Path(__file__).parent.parent / "registration_result.json"
 
@@ -61,23 +48,15 @@ def parse_issue_body(body: str) -> dict | None:
         ### Realm
 
         Nordanaar
-
-        ### Discord Webhook URL
-
-        https://discord.com/api/webhooks/...
     """
     name_match = re.search(r"### Character Name\s+(\S[^\n]*)", body)
     realm_match = re.search(r"### Realm\s+(\S[^\n]*)", body)
-    webhook_match = re.search(
-        r"### Discord Webhook URL\s+(https://discord(?:app)?\.com/api/webhooks/\S+)", body
-    )
 
-    if not (name_match and realm_match and webhook_match):
+    if not (name_match and realm_match):
         return None
 
     name = name_match.group(1).strip()
     realm = realm_match.group(1).strip()
-    webhook = webhook_match.group(1).strip()
 
     if realm not in VALID_REALMS:
         return None
@@ -85,7 +64,7 @@ def parse_issue_body(body: str) -> dict | None:
     if not name or len(name) > 12:
         return None
 
-    return {"name": name, "realm": realm, "discord_webhook": encrypt_webhook(webhook)}
+    return {"name": name, "realm": realm}
 
 
 def main() -> None:
@@ -105,8 +84,7 @@ def main() -> None:
             comment=(
                 "Could not parse your registration. Please use the issue template and fill in "
                 "all fields.\n\n"
-                "**Valid realms:** Nordanaar, Tel'Abim, Ambershire\n\n"
-                "**Discord Webhook URL** must start with `https://discord.com/api/webhooks/`"
+                "**Valid realms:** Nordanaar, Tel'Abim, Ambershire"
             ),
             close_issue=False,
         )
@@ -115,19 +93,16 @@ def main() -> None:
 
     name = parsed["name"]
     realm = parsed["realm"]
-    webhook = parsed["discord_webhook"]
 
     characters = load_characters()
 
-    # Check for existing registration — update webhook if already registered
+    # Check for existing registration
     for char in characters:
         if char["name"].lower() == name.lower() and char["realm"] == realm:
-            char["discord_webhook"] = webhook
-            save_characters(characters)
-            print(f"Updated existing registration for {name} on {realm}.")
+            print(f"Already registered: {name} on {realm}.")
             write_result(
                 success=True,
-                comment=f"Updated registration for **{name}** on **{realm}**! Your Discord webhook has been updated.",
+                comment=f"**{name}** on **{realm}** is already registered!",
             )
             return
 
@@ -135,7 +110,6 @@ def main() -> None:
     characters.append({
         "name": name,
         "realm": realm,
-        "discord_webhook": webhook,
         "level": 0,
         "race": "Unknown",
         "class": "Unknown",

@@ -24,11 +24,11 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install requests beautifulsoup4 cryptography
+        run: pip install requests beautifulsoup4
 
       - name: Run poller
         env:
-          WEBHOOK_ENCRYPTION_KEY: ${{ secrets.WEBHOOK_ENCRYPTION_KEY }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: python scripts/poll.py
 
       - name: Commit updated character levels
