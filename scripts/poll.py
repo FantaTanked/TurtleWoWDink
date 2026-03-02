@@ -149,6 +149,9 @@ def main() -> None:
         elif new_level > old_level:
             print(f"  Level up detected: {old_level} -> {new_level}")
             webhook = os.environ.get("DISCORD_WEBHOOK_URL", "")
+            thread_id = os.environ.get("DISCORD_THREAD_ID", "")
+            if thread_id:
+                webhook = f"{webhook}?thread_id={thread_id}"
             if webhook:
                 for lvl in range(old_level + 1, new_level + 1):
                     success = send_discord(

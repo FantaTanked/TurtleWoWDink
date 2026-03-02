@@ -29,6 +29,7 @@ jobs:
       - name: Run poller
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          DISCORD_THREAD_ID: "1478101192637677568"
         run: python scripts/poll.py
 
       - name: Commit updated character levels
