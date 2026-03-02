@@ -69,8 +69,8 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit."
           else
-            git pull --rebase origin main
             git commit -m "feat: register character via issue #${{ github.event.issue.number }} [skip ci]"
+            git pull --rebase origin main
             git push
           fi
 
