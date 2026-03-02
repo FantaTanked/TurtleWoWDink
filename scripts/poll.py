@@ -104,23 +104,47 @@ def scrape_character(name: str, realm: str) -> dict | None:
 def _parse_skills(soup) -> dict:
     """Parse skill/profession levels from the armory page.
 
-    Each skill entry is structured as:
-      <parent><img src="...SkillName-hash.png"><span>SkillName</span><span>VALUE</span></parent>
-    The img alt attribute is empty, so we match on span text content instead.
+    Identifies skills by img src filename (e.g. 'Cooking-HASH.png'),
+    then searches the surrounding container for a numeric level value.
+    Falls back to matching span/div text against known skill names.
     """
     skills = {}
-    for span in soup.find_all("span"):
-        skill_name = span.get_text(strip=True)
-        if skill_name not in ALL_SKILLS:
+
+    # Strategy 1: locate skill by img src filename
+    for img in soup.find_all("img", src=True):
+        filename = img["src"].rsplit("/", 1)[-1]
+        skill_name = next(
+            (s for s in ALL_SKILLS if re.match(rf"^{re.escape(s)}-", filename, re.IGNORECASE)),
+            None,
+        )
+        if not skill_name:
             continue
-        parent = span.parent
-        if not parent:
-            continue
-        for sib in parent.find_all("span"):
-            text = sib.get_text(strip=True).split("/")[0].strip()
-            if text.isdigit():
-                skills[skill_name] = int(text)
+        # Search parent then grandparent for a numeric value among siblings
+        for container in filter(None, [img.parent, getattr(img.parent, "parent", None)]):
+            for text in container.stripped_strings:
+                val = text.split("/")[0].strip()
+                if val.isdigit():
+                    skills[skill_name] = int(val)
+                    break
+            if skill_name in skills:
                 break
+
+    # Strategy 2: match element text directly against known skill names (any tag)
+    if not skills:
+        for elem in soup.find_all(True):
+            skill_name = elem.get_text(strip=True)
+            if skill_name not in ALL_SKILLS:
+                continue
+            parent = elem.parent
+            if not parent:
+                continue
+            for text in parent.stripped_strings:
+                val = text.split("/")[0].strip()
+                if val.isdigit():
+                    skills[skill_name] = int(val)
+                    break
+
+    print(f"  Skills found: {skills or 'none'}")
     return skills
 
 
