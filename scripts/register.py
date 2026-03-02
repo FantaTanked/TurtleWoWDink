@@ -154,4 +154,14 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as e:
+        # Always write a result file so the workflow step doesn't fail trying to read it
+        write_result(
+            success=False,
+            comment=f"Registration failed due to an internal error: `{e}`\n\nPlease contact the repo owner.",
+            close_issue=False,
+        )
+        print(f"FATAL: {e}")
+        sys.exit(1)
