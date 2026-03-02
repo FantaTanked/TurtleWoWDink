@@ -2,43 +2,43 @@
   {
     "name": "Jimmybowman",
     "realm": "Nordanaar",
-    "level": 19,
-    "race": 8,
-    "class": 3
+    "level": 20,
+    "race": "Troll",
+    "class": "Hunter"
   },
   {
     "name": "Rizziopea",
     "realm": "Nordanaar",
-    "level": 16,
-    "race": 8,
-    "class": 5
+    "level": 17,
+    "race": "Troll",
+    "class": "Priest"
   },
   {
     "name": "Nallesham",
     "realm": "Nordanaar",
     "level": 19,
-    "race": 6,
-    "class": 7
+    "race": "Tauren",
+    "class": "Shaman"
   },
   {
     "name": "Kaleighh",
     "realm": "Nordanaar",
     "level": 14,
-    "race": 5,
-    "class": 9
+    "race": "Undead",
+    "class": "Warlock"
   },
   {
     "name": "Nutby",
     "realm": "Nordanaar",
     "level": 19,
-    "race": 6,
-    "class": 11
+    "race": "Tauren",
+    "class": "Druid"
   },
   {
     "name": "Pissgoblin",
     "realm": "Nordanaar",
     "level": 6,
-    "race": 9,
-    "class": 8
+    "race": "Goblin",
+    "class": "Mage"
   }
 ]
