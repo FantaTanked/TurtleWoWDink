@@ -16,7 +16,7 @@
   {
     "name": "Nallesham",
     "realm": "Nordanaar",
-    "level": 18,
+    "level": 19,
     "race": 6,
     "class": 7
   },
@@ -30,15 +30,15 @@
   {
     "name": "Nutby",
     "realm": "Nordanaar",
-    "level": 18,
+    "level": 19,
     "race": 6,
     "class": 11
   },
   {
     "name": "Pissgoblin",
     "realm": "Nordanaar",
-    "level": 0,
-    "race": "Unknown",
-    "class": "Unknown"
+    "level": 6,
+    "race": 9,
+    "class": 8
   }
 ]
