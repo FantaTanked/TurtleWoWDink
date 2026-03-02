@@ -8,6 +8,7 @@ Sends Discord webhook notifications when a level-up is detected.
 """
 
 import json
+import os
 import re
 import time
 from datetime import datetime, timezone
@@ -16,6 +17,18 @@ from urllib.parse import quote
 
 import requests
 from bs4 import BeautifulSoup
+from cryptography.fernet import Fernet
+
+
+def get_cipher() -> Fernet:
+    key = os.environ.get("WEBHOOK_ENCRYPTION_KEY", "")
+    if not key:
+        raise RuntimeError("WEBHOOK_ENCRYPTION_KEY secret is not set in the Actions environment.")
+    return Fernet(key.encode())
+
+
+def decrypt_webhook(token: str) -> str:
+    return get_cipher().decrypt(token.encode()).decode()
 
 CHARACTERS_FILE = Path(__file__).parent.parent / "characters.json"
 ARMORY_URL = "https://turtlecraft.gg/armory/{realm}/{name}"
@@ -142,7 +155,8 @@ def main() -> None:
 
         elif new_level > old_level:
             print(f"  Level up detected: {old_level} -> {new_level}")
-            webhook = char.get("discord_webhook", "")
+            encrypted = char.get("discord_webhook", "")
+            webhook = decrypt_webhook(encrypted) if encrypted else ""
             if webhook:
                 for lvl in range(old_level + 1, new_level + 1):
                     success = send_discord(

@@ -13,6 +13,19 @@ import re
 import sys
 from pathlib import Path
 
+from cryptography.fernet import Fernet
+
+
+def get_cipher() -> Fernet:
+    key = os.environ.get("WEBHOOK_ENCRYPTION_KEY", "")
+    if not key:
+        raise RuntimeError("WEBHOOK_ENCRYPTION_KEY secret is not set in the Actions environment.")
+    return Fernet(key.encode())
+
+
+def encrypt_webhook(url: str) -> str:
+    return get_cipher().encrypt(url.encode()).decode()
+
 CHARACTERS_FILE = Path(__file__).parent.parent / "characters.json"
 RESULT_FILE = Path(__file__).parent.parent / "registration_result.json"
 
@@ -72,7 +85,7 @@ def parse_issue_body(body: str) -> dict | None:
     if not name or len(name) > 12:
         return None
 
-    return {"name": name, "realm": realm, "discord_webhook": webhook}
+    return {"name": name, "realm": realm, "discord_webhook": encrypt_webhook(webhook)}
 
 
 def main() -> None:
