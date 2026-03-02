@@ -22,6 +22,15 @@ CHARACTERS_FILE = Path(__file__).parent.parent / "characters.json"
 ARMORY_URL = "https://turtlecraft.gg/armory/{realm}/{name}"
 HEADERS = {"User-Agent": "TurtleDink-Bot/1.0 (github.com/TurtleDink)"}
 
+RACE_NAMES = {
+    1: "Human", 2: "Orc", 3: "Dwarf", 4: "Night Elf", 5: "Undead",
+    6: "Tauren", 7: "Gnome", 8: "Troll", 9: "Goblin",
+}
+CLASS_NAMES = {
+    1: "Warrior", 2: "Paladin", 3: "Hunter", 4: "Rogue", 5: "Priest",
+    7: "Shaman", 8: "Mage", 9: "Warlock", 11: "Druid",
+}
+
 
 def load_characters() -> list:
     if not CHARACTERS_FILE.exists():
@@ -74,8 +83,10 @@ def scrape_character(name: str, realm: str) -> dict | None:
             snapshot = json.loads(snapshot_tag["wire:snapshot"])
             char_list = snapshot.get("data", {}).get("character", [])
             char_data = char_list[0] if isinstance(char_list, list) and char_list else {}
-            race = char_data.get("race") or "Unknown"
-            cls = char_data.get("class") or char_data.get("class_name") or "Unknown"
+            race_raw = char_data.get("race")
+            cls_raw = char_data.get("class") or char_data.get("class_name")
+            race = RACE_NAMES.get(race_raw, race_raw) or "Unknown"
+            cls = CLASS_NAMES.get(cls_raw, cls_raw) or "Unknown"
         except (json.JSONDecodeError, KeyError, TypeError, IndexError):
             pass
 
@@ -154,10 +165,12 @@ def main() -> None:
                 webhook = f"{webhook}?thread_id={thread_id}"
             if webhook:
                 for lvl in range(old_level + 1, new_level + 1):
+                    race_val = char.get("race", "Unknown")
+                    cls_val = char.get("class", "Unknown")
                     success = send_discord(
                         webhook, name, lvl,
-                        char.get("race", "Unknown"),
-                        char.get("class", "Unknown"),
+                        RACE_NAMES.get(race_val, race_val),
+                        CLASS_NAMES.get(cls_val, cls_val),
                         realm,
                     )
                     if success:
