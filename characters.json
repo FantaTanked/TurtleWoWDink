@@ -5,5 +5,12 @@
     "level": 19,
     "race": 8,
     "class": 3
+  },
+  {
+    "name": "Rizziopea",
+    "realm": "Nordanaar",
+    "level": 0,
+    "race": "Unknown",
+    "class": "Unknown"
   }
 ]
