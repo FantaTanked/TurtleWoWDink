@@ -50,15 +50,20 @@ def save_characters(characters: list) -> None:
 
 def scrape_character(name: str, realm: str) -> dict | None:
     url = ARMORY_URL.format(realm=quote(realm), name=quote(name))
-    try:
-        r = requests.get(url, headers=HEADERS, timeout=15)
-        if r.status_code == 404:
-            print(f"  Character not found on armory (404)")
-            return None
-        r.raise_for_status()
-    except requests.RequestException as e:
-        print(f"  Request failed: {e}")
-        return None
+    for attempt in range(1, 4):  # up to 3 attempts
+        try:
+            r = requests.get(url, headers=HEADERS, timeout=30)
+            if r.status_code == 404:
+                print(f"  Character not found on armory (404)")
+                return None
+            r.raise_for_status()
+            break  # success
+        except requests.RequestException as e:
+            print(f"  Request failed (attempt {attempt}/3): {e}")
+            if attempt < 3:
+                time.sleep(5)
+            else:
+                return None
 
     soup = BeautifulSoup(r.text, "html.parser")
 
