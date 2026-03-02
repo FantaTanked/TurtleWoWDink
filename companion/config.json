@@ -1,0 +1,8 @@
+{
+  "discord_webhook_url": "https://discord.com/api/webhooks/1478097877413789918/RICUfQ_J0h-tMo6oRgLr2H0oRwSUwwxf_Q5gghFcS6OFWMFY_xC1KT9sYI2IxlWeLNot",
+  "wow_path": "D:\\Games\\WoW",
+  "check_interval_seconds": 10,
+  "message_template": "**{player}** just reached level **{level}**! ({race} {class})",
+  "use_embed": true,
+  "embed_color": 16766720
+}

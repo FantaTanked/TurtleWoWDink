@@ -1,0 +1,45 @@
+name: Poll Character Levels
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'   # Every 5 minutes
+  workflow_dispatch:          # Allow manual trigger from Actions tab
+
+jobs:
+  poll:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # Use a token with write access so the bot push isn't blocked
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
+
+      - name: Run poller
+        run: python scripts/poll.py
+
+      - name: Commit updated character levels
+        run: |
+          git config user.name  "TurtleDink Bot"
+          git config user.email "turtledink-bot@users.noreply.github.com"
+          git add characters.json
+          # Only commit if something actually changed
+          if git diff --staged --quiet; then
+            echo "No level changes — nothing to commit."
+          else
+            # Pull with rebase in case another job (e.g. a registration) pushed first
+            git pull --rebase origin ${{ github.ref_name }}
+            git commit -m "chore: update character levels [skip ci]"
+            git push
+          fi

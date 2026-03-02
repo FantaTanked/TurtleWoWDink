@@ -1,0 +1,12 @@
+# Claude Code local settings (may contain sensitive data)
+.claude/
+
+# Python
+__pycache__/
+*.pyc
+
+# Local companion app state
+companion/.processed_events.json
+
+# Registration result temp file
+registration_result.json

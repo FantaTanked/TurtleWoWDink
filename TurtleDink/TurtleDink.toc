@@ -1,0 +1,8 @@
+## Interface: 11200
+## Title: TurtleDink
+## Notes: Sends Discord notifications on level-up (requires TurtleDink companion app)
+## Version: 1.0.0
+## Author: TurtleDink
+## SavedVariables: TurtleDinkDB
+
+TurtleDink.lua

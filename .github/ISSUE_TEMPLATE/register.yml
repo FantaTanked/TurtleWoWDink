@@ -1,0 +1,53 @@
+name: Register Character
+description: Register your Turtle WoW character to receive Discord level-up notifications.
+title: "Register: [CHARACTER NAME]"
+labels: ["registration"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Fill in the fields below. A bot will process this automatically within a minute.
+        Your character will be picked up on the next poll (within 5 minutes) and you'll
+        receive a Discord notification every time you level up.
+
+  - type: input
+    id: character-name
+    attributes:
+      label: Character Name
+      description: Your exact character name as it appears in-game (case-sensitive).
+      placeholder: Jimmybowman
+    validations:
+      required: true
+
+  - type: dropdown
+    id: realm
+    attributes:
+      label: Realm
+      description: Which realm is your character on?
+      options:
+        - Nordanaar
+        - "Tel'Abim"
+        - Ambershire
+    validations:
+      required: true
+
+  - type: input
+    id: webhook
+    attributes:
+      label: Discord Webhook URL
+      description: >
+        Create one in Discord: open your server → Server Settings → Integrations → Webhooks → New Webhook.
+        Copy the webhook URL and paste it here.
+      placeholder: "https://discord.com/api/webhooks/1234567890/abcdefgh..."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: acknowledgement
+    attributes:
+      label: Acknowledgement
+      options:
+        - label: >
+            I understand that my character name, realm, and Discord webhook URL will be stored
+            in a publicly visible file in this repository.
+          required: true
