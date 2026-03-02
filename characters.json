@@ -9,29 +9,29 @@
   {
     "name": "Rizziopea",
     "realm": "Nordanaar",
-    "level": 0,
-    "race": "Unknown",
-    "class": "Unknown"
+    "level": 16,
+    "race": 8,
+    "class": 5
   },
   {
     "name": "Nallesham",
     "realm": "Nordanaar",
-    "level": 0,
-    "race": "Unknown",
-    "class": "Unknown"
+    "level": 18,
+    "race": 6,
+    "class": 7
   },
   {
     "name": "Kaleighh",
     "realm": "Nordanaar",
-    "level": 0,
-    "race": "Unknown",
-    "class": "Unknown"
+    "level": 14,
+    "race": 5,
+    "class": 9
   },
   {
     "name": "Nutby",
     "realm": "Nordanaar",
-    "level": 0,
-    "race": "Unknown",
-    "class": "Unknown"
+    "level": 18,
+    "race": 6,
+    "class": 11
   }
 ]
