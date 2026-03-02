@@ -31,6 +31,13 @@ CLASS_NAMES = {
     7: "Shaman", 8: "Mage", 9: "Warlock", 11: "Druid",
 }
 
+PRIMARY_PROFESSIONS = {
+    "Alchemy", "Blacksmithing", "Enchanting", "Engineering",
+    "Herbalism", "Leatherworking", "Mining", "Skinning", "Tailoring",
+}
+SECONDARY_SKILLS = {"Cooking", "First Aid", "Fishing", "Survival"}
+ALL_SKILLS = PRIMARY_PROFESSIONS | SECONDARY_SKILLS
+
 
 def load_characters() -> list:
     if not CHARACTERS_FILE.exists():
@@ -90,7 +97,30 @@ def scrape_character(name: str, realm: str) -> dict | None:
         except (json.JSONDecodeError, KeyError, TypeError, IndexError):
             pass
 
-    return {"level": level, "race": race, "class": cls}
+    skills = _parse_skills(soup)
+    return {"level": level, "race": race, "class": cls, "skills": skills}
+
+
+def _parse_skills(soup) -> dict:
+    """Parse skill/profession levels from the armory page.
+
+    Each skill entry is structured as:
+      <parent><img alt="SkillName"><span>SkillName</span><span>VALUE</span></parent>
+    """
+    skills = {}
+    for img in soup.find_all("img", alt=True):
+        skill_name = img.get("alt", "").strip()
+        if skill_name not in ALL_SKILLS:
+            continue
+        parent = img.parent
+        if not parent:
+            continue
+        for span in parent.find_all("span"):
+            text = span.get_text(strip=True).split("/")[0].strip()
+            if text.isdigit():
+                skills[skill_name] = int(text)
+                break
+    return skills
 
 
 def send_discord(webhook_url: str, name: str, level: int, race: str, cls: str, realm: str) -> bool:
@@ -120,6 +150,30 @@ def send_discord(webhook_url: str, name: str, level: int, race: str, cls: str, r
         return False
 
 
+def send_discord_skill(webhook_url: str, name: str, skill: str, old_val: int, new_val: int, realm: str) -> bool:
+    category = "Secondary Skill" if skill in SECONDARY_SKILLS else "Profession"
+    embed = {
+        "title": "\U0001f4aa Skill Up!",
+        "description": f"**{name}** levelled **{skill}** to **{new_val}**!",
+        "color": 2031360,  # WoW uncommon green 0x1EFF00
+        "fields": [
+            {"name": "Skill", "value": skill, "inline": True},
+            {"name": "Type", "value": category, "inline": True},
+            {"name": "Level", "value": f"{old_val} \u2192 {new_val}", "inline": True},
+            {"name": "Realm", "value": realm, "inline": True},
+        ],
+        "footer": {"text": "TurtleDink \u2022 Turtle WoW"},
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+    }
+    try:
+        r = requests.post(webhook_url, json={"embeds": [embed]}, headers=HEADERS, timeout=10)
+        r.raise_for_status()
+        return True
+    except requests.RequestException as e:
+        print(f"  Discord error: {e}")
+        return False
+
+
 def main() -> None:
     print("=== TurtleDink Poller ===")
     characters = load_characters()
@@ -130,6 +184,11 @@ def main() -> None:
 
     print(f"Checking {len(characters)} character(s)...\n")
     changed = False
+
+    webhook = os.environ.get("DISCORD_WEBHOOK_URL", "")
+    thread_id = os.environ.get("DISCORD_THREAD_ID", "")
+    if thread_id:
+        webhook = f"{webhook}?thread_id={thread_id}"
 
     for char in characters:
         name = char["name"]
@@ -159,10 +218,6 @@ def main() -> None:
 
         elif new_level > old_level:
             print(f"  Level up detected: {old_level} -> {new_level}")
-            webhook = os.environ.get("DISCORD_WEBHOOK_URL", "")
-            thread_id = os.environ.get("DISCORD_THREAD_ID", "")
-            if thread_id:
-                webhook = f"{webhook}?thread_id={thread_id}"
             if webhook:
                 for lvl in range(old_level + 1, new_level + 1):
                     race_val = char.get("race", "Unknown")
@@ -183,6 +238,28 @@ def main() -> None:
 
         else:
             print(f"  No change (level {new_level}).")
+
+        # Handle skill/profession changes
+        new_skills = data.get("skills", {})
+        if new_skills:
+            old_skills = char.setdefault("skills", {})
+            for skill_name, new_val in sorted(new_skills.items()):
+                old_val = old_skills.get(skill_name)
+                if old_val is None:
+                    # First time seeing this skill — initialise silently
+                    old_skills[skill_name] = new_val
+                    changed = True
+                elif new_val > old_val:
+                    print(f"  Skill up: {skill_name} {old_val} -> {new_val}")
+                    if webhook:
+                        success = send_discord_skill(webhook, name, skill_name, old_val, new_val, realm)
+                        if success:
+                            print(f"    Discord notification sent.")
+                        else:
+                            print(f"    Failed to notify — will retry next poll.")
+                        time.sleep(0.5)
+                    old_skills[skill_name] = new_val
+                    changed = True
 
         print()
         time.sleep(1)  # Be polite to turtlecraft.gg
