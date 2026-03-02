@@ -105,18 +105,19 @@ def _parse_skills(soup) -> dict:
     """Parse skill/profession levels from the armory page.
 
     Each skill entry is structured as:
-      <parent><img alt="SkillName"><span>SkillName</span><span>VALUE</span></parent>
+      <parent><img src="...SkillName-hash.png"><span>SkillName</span><span>VALUE</span></parent>
+    The img alt attribute is empty, so we match on span text content instead.
     """
     skills = {}
-    for img in soup.find_all("img", alt=True):
-        skill_name = img.get("alt", "").strip()
+    for span in soup.find_all("span"):
+        skill_name = span.get_text(strip=True)
         if skill_name not in ALL_SKILLS:
             continue
-        parent = img.parent
+        parent = span.parent
         if not parent:
             continue
-        for span in parent.find_all("span"):
-            text = span.get_text(strip=True).split("/")[0].strip()
+        for sib in parent.find_all("span"):
+            text = sib.get_text(strip=True).split("/")[0].strip()
             if text.isdigit():
                 skills[skill_name] = int(text)
                 break
