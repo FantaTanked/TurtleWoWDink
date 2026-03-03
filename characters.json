@@ -57,18 +57,18 @@
     "race": "Tauren",
     "class": "Druid",
     "skills": {
-      "Alchemy": 102,
+      "Alchemy": 106,
       "Cooking": 53,
       "First Aid": 83,
-      "Fishing": 107,
-      "Herbalism": 121,
+      "Fishing": 108,
+      "Herbalism": 122,
       "Survival": 53
     }
   },
   {
     "name": "Pissgoblin",
     "realm": "Nordanaar",
-    "level": 9,
+    "level": 10,
     "race": "Goblin",
     "class": "Mage",
     "skills": {
@@ -76,7 +76,7 @@
       "Engineering": 1,
       "First Aid": 46,
       "Fishing": 1,
-      "Herbalism": 3,
+      "Herbalism": 7,
       "Mining": 8
     }
   },
