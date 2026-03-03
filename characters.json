@@ -21,7 +21,7 @@
     "race": "Troll",
     "class": "Priest",
     "skills": {
-      "Enchanting": 101,
+      "Enchanting": 105,
       "Fishing": 1,
       "Survival": 51,
       "Tailoring": 103
@@ -37,7 +37,7 @@
       "First Aid": 1,
       "Fishing": 1,
       "Mining": 73,
-      "Survival": 52
+      "Survival": 54
     }
   },
   {
@@ -59,7 +59,7 @@
     "skills": {
       "Alchemy": 93,
       "Cooking": 1,
-      "First Aid": 78,
+      "First Aid": 83,
       "Fishing": 78,
       "Herbalism": 90,
       "Survival": 53
@@ -80,8 +80,14 @@
   {
     "name": "Nallebones",
     "realm": "Nordanaar",
-    "level": 0,
-    "race": "Unknown",
-    "class": "Unknown"
+    "level": 14,
+    "race": "Undead",
+    "class": "Warrior",
+    "skills": {
+      "Blacksmithing": 57,
+      "First Aid": 3,
+      "Fishing": 4,
+      "Mining": 57
+    }
   }
 ]
