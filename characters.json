@@ -35,8 +35,8 @@
     "class": "Shaman",
     "skills": {
       "First Aid": 1,
-      "Fishing": 1,
-      "Mining": 105,
+      "Fishing": 2,
+      "Mining": 106,
       "Survival": 54
     }
   },
@@ -58,10 +58,10 @@
     "class": "Druid",
     "skills": {
       "Alchemy": 102,
-      "Cooking": 51,
+      "Cooking": 53,
       "First Aid": 83,
-      "Fishing": 105,
-      "Herbalism": 120,
+      "Fishing": 107,
+      "Herbalism": 121,
       "Survival": 53
     }
   },
@@ -74,10 +74,10 @@
     "skills": {
       "Cooking": 1,
       "Engineering": 1,
-      "First Aid": 43,
+      "First Aid": 46,
       "Fishing": 1,
       "Herbalism": 3,
-      "Mining": 5
+      "Mining": 8
     }
   },
   {
