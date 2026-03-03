@@ -36,7 +36,7 @@
     "skills": {
       "First Aid": 1,
       "Fishing": 1,
-      "Mining": 91,
+      "Mining": 92,
       "Survival": 54
     }
   },
@@ -57,7 +57,7 @@
     "race": "Tauren",
     "class": "Druid",
     "skills": {
-      "Alchemy": 93,
+      "Alchemy": 98,
       "Cooking": 41,
       "First Aid": 83,
       "Fishing": 78,
