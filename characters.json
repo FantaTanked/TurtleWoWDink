@@ -36,7 +36,7 @@
     "skills": {
       "First Aid": 1,
       "Fishing": 1,
-      "Mining": 73,
+      "Mining": 83,
       "Survival": 54
     }
   },
@@ -68,13 +68,13 @@
   {
     "name": "Pissgoblin",
     "realm": "Nordanaar",
-    "level": 7,
+    "level": 8,
     "race": "Goblin",
     "class": "Mage",
     "skills": {
       "Cooking": 1,
       "Engineering": 1,
-      "First Aid": 22
+      "First Aid": 23
     }
   },
   {
