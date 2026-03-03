@@ -76,5 +76,12 @@
       "Engineering": 1,
       "First Aid": 22
     }
+  },
+  {
+    "name": "Nallebones",
+    "realm": "Nordanaar",
+    "level": 0,
+    "race": "Unknown",
+    "class": "Unknown"
   }
 ]
