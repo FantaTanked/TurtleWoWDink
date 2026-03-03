@@ -36,7 +36,7 @@
     "skills": {
       "First Aid": 1,
       "Fishing": 1,
-      "Mining": 83,
+      "Mining": 86,
       "Survival": 54
     }
   },
@@ -74,7 +74,8 @@
     "skills": {
       "Cooking": 1,
       "Engineering": 1,
-      "First Aid": 23
+      "First Aid": 23,
+      "Fishing": 1
     }
   },
   {
