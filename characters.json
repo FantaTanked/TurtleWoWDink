@@ -21,7 +21,7 @@
     "race": "Troll",
     "class": "Priest",
     "skills": {
-      "Enchanting": 105,
+      "Enchanting": 106,
       "Fishing": 1,
       "Survival": 51,
       "Tailoring": 103
@@ -36,7 +36,7 @@
     "skills": {
       "First Aid": 1,
       "Fishing": 4,
-      "Mining": 106,
+      "Mining": 107,
       "Survival": 54
     }
   },
@@ -57,11 +57,11 @@
     "race": "Tauren",
     "class": "Druid",
     "skills": {
-      "Alchemy": 108,
+      "Alchemy": 113,
       "Cooking": 53,
       "First Aid": 83,
-      "Fishing": 115,
-      "Herbalism": 122,
+      "Fishing": 119,
+      "Herbalism": 124,
       "Survival": 53
     }
   },
