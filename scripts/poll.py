@@ -7,6 +7,7 @@ Scrapes turtlecraft.gg for each registered character's level.
 Sends Discord webhook notifications when a level-up is detected.
 """
 
+import argparse
 import json
 import os
 import re
@@ -203,7 +204,18 @@ def send_discord_skills(webhook_url: str, name: str, skill_ups: list, realm: str
 
 
 def main() -> None:
-    print("=== TurtleDink Poller ===")
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--mode",
+        choices=["levels", "skills", "both"],
+        default="both",
+        help="Which checks to run: levels, skills, or both (default: both)",
+    )
+    args = parser.parse_args()
+    check_levels = args.mode in ("levels", "both")
+    check_skills = args.mode in ("skills", "both")
+
+    print(f"=== TurtleDink Poller [mode: {args.mode}] ===")
     characters = load_characters()
 
     if not characters:
@@ -238,57 +250,58 @@ def main() -> None:
         if data["class"] != "Unknown":
             char["class"] = data["class"]
 
-        if old_level == 0:
-            # First time we've seen this character — just record level, no notification
-            print(f"  First poll: initialising at level {new_level}.")
-            char["level"] = new_level
-            changed = True
+        if check_levels:
+            if old_level == 0:
+                # First time we've seen this character — just record level, no notification
+                print(f"  First poll: initialising at level {new_level}.")
+                char["level"] = new_level
+                changed = True
 
-        elif new_level > old_level:
-            print(f"  Level up detected: {old_level} -> {new_level}")
-            if webhook:
-                for lvl in range(old_level + 1, new_level + 1):
-                    race_val = char.get("race", "Unknown")
-                    cls_val = char.get("class", "Unknown")
-                    success = send_discord(
-                        webhook, name, lvl,
-                        RACE_NAMES.get(race_val, race_val),
-                        CLASS_NAMES.get(cls_val, cls_val),
-                        realm,
-                    )
+            elif new_level > old_level:
+                print(f"  Level up detected: {old_level} -> {new_level}")
+                if webhook:
+                    for lvl in range(old_level + 1, new_level + 1):
+                        race_val = char.get("race", "Unknown")
+                        cls_val = char.get("class", "Unknown")
+                        success = send_discord(
+                            webhook, name, lvl,
+                            RACE_NAMES.get(race_val, race_val),
+                            CLASS_NAMES.get(cls_val, cls_val),
+                            realm,
+                        )
+                        if success:
+                            print(f"  Discord notification sent for level {lvl}.")
+                        else:
+                            print(f"  Failed to notify for level {lvl} — will retry next poll.")
+                        time.sleep(0.5)
+                char["level"] = new_level
+                changed = True
+
+            else:
+                print(f"  No change (level {new_level}).")
+
+        if check_skills:
+            new_skills = data.get("skills", {})
+            if new_skills:
+                old_skills = char.setdefault("skills", {})
+                skill_ups = []
+                for skill_name, new_val in sorted(new_skills.items()):
+                    old_val = old_skills.get(skill_name)
+                    if old_val is None:
+                        # First time seeing this skill — initialise silently
+                        old_skills[skill_name] = new_val
+                        changed = True
+                    elif new_val > old_val:
+                        print(f"  Skill up: {skill_name} {old_val} -> {new_val}")
+                        skill_ups.append((skill_name, old_val, new_val))
+                        old_skills[skill_name] = new_val
+                        changed = True
+                if skill_ups and webhook:
+                    success = send_discord_skills(webhook, name, skill_ups, realm)
                     if success:
-                        print(f"  Discord notification sent for level {lvl}.")
+                        print(f"    Discord skill notification sent ({len(skill_ups)} skill(s)).")
                     else:
-                        print(f"  Failed to notify for level {lvl} — will retry next poll.")
-                    time.sleep(0.5)
-            char["level"] = new_level
-            changed = True
-
-        else:
-            print(f"  No change (level {new_level}).")
-
-        # Handle skill/profession changes
-        new_skills = data.get("skills", {})
-        if new_skills:
-            old_skills = char.setdefault("skills", {})
-            skill_ups = []
-            for skill_name, new_val in sorted(new_skills.items()):
-                old_val = old_skills.get(skill_name)
-                if old_val is None:
-                    # First time seeing this skill — initialise silently
-                    old_skills[skill_name] = new_val
-                    changed = True
-                elif new_val > old_val:
-                    print(f"  Skill up: {skill_name} {old_val} -> {new_val}")
-                    skill_ups.append((skill_name, old_val, new_val))
-                    old_skills[skill_name] = new_val
-                    changed = True
-            if skill_ups and webhook:
-                success = send_discord_skills(webhook, name, skill_ups, realm)
-                if success:
-                    print(f"    Discord skill notification sent ({len(skill_ups)} skill(s)).")
-                else:
-                    print(f"    Failed to notify skills — will retry next poll.")
+                        print(f"    Failed to notify skills — will retry next poll.")
 
         print()
         time.sleep(1)  # Be polite to turtlecraft.gg

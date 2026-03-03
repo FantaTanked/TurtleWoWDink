@@ -1,7 +1,9 @@
-name: Poll Character Levels
+name: Poll Character Skills
 
 on:
-  workflow_dispatch:          # Allow manual trigger from Actions tab
+  schedule:
+    - cron: '*/30 * * * *'  # Every 30 minutes
+  workflow_dispatch:
 
 jobs:
   poll:
@@ -13,7 +15,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          # Use a token with write access so the bot push isn't blocked
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python
@@ -28,16 +29,15 @@ jobs:
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           DISCORD_THREAD_ID: "1478101192637677568"
-        run: python scripts/poll.py
+        run: python scripts/poll.py --mode skills
 
-      - name: Commit updated character levels
+      - name: Commit updated character skills
         run: |
           git config user.name  "TurtleDink Bot"
           git config user.email "turtledink-bot@users.noreply.github.com"
           git add characters.json
-          # Only commit if something actually changed
           if git diff --staged --quiet; then
-            echo "No level changes — nothing to commit."
+            echo "No skill changes — nothing to commit."
           else
             git commit -m "chore: update character levels [skip ci]"
             git pull --rebase origin main
