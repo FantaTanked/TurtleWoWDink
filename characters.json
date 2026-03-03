@@ -58,10 +58,10 @@
     "class": "Druid",
     "skills": {
       "Alchemy": 93,
-      "Cooking": 1,
+      "Cooking": 4,
       "First Aid": 83,
       "Fishing": 78,
-      "Herbalism": 94,
+      "Herbalism": 95,
       "Survival": 53
     }
   },
