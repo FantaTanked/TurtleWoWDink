@@ -10,9 +10,9 @@
       "First Aid": 2,
       "Fishing": 76,
       "Leatherworking": 60,
-      "Skinning": 130,
+      "Skinning": 135,
       "Survival": 51,
-      "Mining": 3
+      "Mining": 8
     }
   },
   {
@@ -36,7 +36,7 @@
     "class": "Shaman",
     "skills": {
       "First Aid": 1,
-      "Fishing": 4,
+      "Fishing": 54,
       "Mining": 107,
       "Survival": 54
     }
@@ -61,8 +61,8 @@
       "Alchemy": 122,
       "Cooking": 53,
       "First Aid": 83,
-      "Fishing": 121,
-      "Herbalism": 125,
+      "Fishing": 124,
+      "Herbalism": 128,
       "Survival": 53
     }
   },
