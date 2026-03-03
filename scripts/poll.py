@@ -175,16 +175,19 @@ def send_discord(webhook_url: str, name: str, level: int, race: str, cls: str, r
         return False
 
 
-def send_discord_skill(webhook_url: str, name: str, skill: str, old_val: int, new_val: int, realm: str) -> bool:
-    category = "Secondary Skill" if skill in SECONDARY_SKILLS else "Profession"
+def send_discord_skills(webhook_url: str, name: str, skill_ups: list, realm: str) -> bool:
+    """Send a single Discord message summarising all skill-ups for one player."""
+    lines = []
+    for skill_name, old_val, new_val in skill_ups:
+        category = "Secondary" if skill_name in SECONDARY_SKILLS else "Profession"
+        lines.append(f"**{skill_name}** ({category}): {old_val} \u2192 {new_val}")
+
+    plural = "s" if len(skill_ups) > 1 else ""
     embed = {
-        "title": "\U0001f4aa Skill Up!",
-        "description": f"**{name}** levelled **{skill}** to **{new_val}**!",
+        "title": f"\U0001f4aa Skill Up{plural}!",
+        "description": f"**{name}** levelled up the following skill{plural}!\n\n" + "\n".join(lines),
         "color": 2031360,  # WoW uncommon green 0x1EFF00
         "fields": [
-            {"name": "Skill", "value": skill, "inline": True},
-            {"name": "Type", "value": category, "inline": True},
-            {"name": "Level", "value": f"{old_val} \u2192 {new_val}", "inline": True},
             {"name": "Realm", "value": realm, "inline": True},
         ],
         "footer": {"text": "TurtleDink \u2022 Turtle WoW"},
@@ -268,6 +271,7 @@ def main() -> None:
         new_skills = data.get("skills", {})
         if new_skills:
             old_skills = char.setdefault("skills", {})
+            skill_ups = []
             for skill_name, new_val in sorted(new_skills.items()):
                 old_val = old_skills.get(skill_name)
                 if old_val is None:
@@ -276,15 +280,15 @@ def main() -> None:
                     changed = True
                 elif new_val > old_val:
                     print(f"  Skill up: {skill_name} {old_val} -> {new_val}")
-                    if webhook:
-                        success = send_discord_skill(webhook, name, skill_name, old_val, new_val, realm)
-                        if success:
-                            print(f"    Discord notification sent.")
-                        else:
-                            print(f"    Failed to notify — will retry next poll.")
-                        time.sleep(0.5)
+                    skill_ups.append((skill_name, old_val, new_val))
                     old_skills[skill_name] = new_val
                     changed = True
+            if skill_ups and webhook:
+                success = send_discord_skills(webhook, name, skill_ups, realm)
+                if success:
+                    print(f"    Discord skill notification sent ({len(skill_ups)} skill(s)).")
+                else:
+                    print(f"    Failed to notify skills — will retry next poll.")
 
         print()
         time.sleep(1)  # Be polite to turtlecraft.gg
