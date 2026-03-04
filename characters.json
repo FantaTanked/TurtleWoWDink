@@ -107,5 +107,12 @@
     "level": 4,
     "race": 10,
     "class": "Paladin"
+  },
+  {
+    "name": "Profil",
+    "realm": "Nordanaar",
+    "level": 0,
+    "race": "Unknown",
+    "class": "Unknown"
   }
 ]
