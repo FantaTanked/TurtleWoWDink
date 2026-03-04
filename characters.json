@@ -114,5 +114,12 @@
     "level": 5,
     "race": "Dwarf",
     "class": "Paladin"
+  },
+  {
+    "name": "Vallina",
+    "realm": "Nordanaar",
+    "level": 0,
+    "race": "Unknown",
+    "class": "Unknown"
   }
 ]
