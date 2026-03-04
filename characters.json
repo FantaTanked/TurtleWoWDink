@@ -97,15 +97,15 @@
   {
     "name": "Jimmystabman",
     "realm": "Nordanaar",
-    "level": 0,
-    "race": "Unknown",
-    "class": "Unknown"
+    "level": 1,
+    "race": "Night Elf",
+    "class": "Rogue"
   },
   {
     "name": "Nalledin",
     "realm": "Nordanaar",
-    "level": 0,
-    "race": "Unknown",
-    "class": "Unknown"
+    "level": 2,
+    "race": 10,
+    "class": "Paladin"
   }
 ]
