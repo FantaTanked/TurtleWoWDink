@@ -118,8 +118,8 @@
   {
     "name": "Vallina",
     "realm": "Nordanaar",
-    "level": 0,
-    "race": "Unknown",
-    "class": "Unknown"
+    "level": 5,
+    "race": 10,
+    "class": "Paladin"
   }
 ]
