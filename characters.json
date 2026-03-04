@@ -36,7 +36,7 @@
     "class": "Shaman",
     "skills": {
       "First Aid": 1,
-      "Fishing": 54,
+      "Fishing": 56,
       "Mining": 107,
       "Survival": 55
     }
@@ -48,7 +48,9 @@
     "race": "Undead",
     "class": "Warlock",
     "skills": {
-      "Fishing": 1
+      "Fishing": 1,
+      "Engineering": 1,
+      "Mining": 1
     }
   },
   {
@@ -63,7 +65,7 @@
       "First Aid": 83,
       "Fishing": 124,
       "Herbalism": 131,
-      "Survival": 54
+      "Survival": 55
     }
   },
   {
