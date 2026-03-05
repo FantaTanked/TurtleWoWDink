@@ -8,11 +8,11 @@
     "skills": {
       "Cooking": 90,
       "First Aid": 2,
-      "Fishing": 76,
+      "Fishing": 103,
       "Leatherworking": 60,
       "Skinning": 164,
-      "Survival": 52,
-      "Mining": 56
+      "Survival": 53,
+      "Mining": 69
     }
   },
   {
@@ -22,10 +22,10 @@
     "race": "Troll",
     "class": "Priest",
     "skills": {
-      "Enchanting": 115,
+      "Enchanting": 120,
       "Fishing": 1,
       "Survival": 51,
-      "Tailoring": 119
+      "Tailoring": 121
     }
   },
   {
