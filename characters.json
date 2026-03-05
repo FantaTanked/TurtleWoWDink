@@ -49,8 +49,8 @@
     "class": "Warlock",
     "skills": {
       "Fishing": 1,
-      "Engineering": 5,
-      "Mining": 6
+      "Engineering": 6,
+      "Mining": 22
     }
   },
   {
