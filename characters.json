@@ -8,9 +8,9 @@
     "skills": {
       "Cooking": 90,
       "First Aid": 2,
-      "Fishing": 103,
+      "Fishing": 107,
       "Leatherworking": 60,
-      "Skinning": 164,
+      "Skinning": 172,
       "Survival": 53,
       "Mining": 69
     }
@@ -49,7 +49,7 @@
     "class": "Warlock",
     "skills": {
       "Fishing": 1,
-      "Engineering": 42,
+      "Engineering": 45,
       "Mining": 52
     }
   },
@@ -64,7 +64,7 @@
       "Cooking": 53,
       "First Aid": 83,
       "Fishing": 131,
-      "Herbalism": 146,
+      "Herbalism": 147,
       "Survival": 55
     }
   },
@@ -78,8 +78,8 @@
       "Cooking": 1,
       "Engineering": 1,
       "First Aid": 46,
-      "Fishing": 1,
-      "Herbalism": 18,
+      "Fishing": 32,
+      "Herbalism": 19,
       "Mining": 13
     }
   },
