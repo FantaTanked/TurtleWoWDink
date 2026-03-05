@@ -11,7 +11,7 @@
       "Fishing": 76,
       "Leatherworking": 60,
       "Skinning": 164,
-      "Survival": 51,
+      "Survival": 52,
       "Mining": 11
     }
   },
@@ -22,7 +22,7 @@
     "race": "Troll",
     "class": "Priest",
     "skills": {
-      "Enchanting": 111,
+      "Enchanting": 115,
       "Fishing": 1,
       "Survival": 51,
       "Tailoring": 113
@@ -49,8 +49,8 @@
     "class": "Warlock",
     "skills": {
       "Fishing": 1,
-      "Engineering": 3,
-      "Mining": 4
+      "Engineering": 5,
+      "Mining": 6
     }
   },
   {
@@ -60,11 +60,11 @@
     "race": "Tauren",
     "class": "Druid",
     "skills": {
-      "Alchemy": 122,
+      "Alchemy": 144,
       "Cooking": 53,
       "First Aid": 83,
       "Fishing": 128,
-      "Herbalism": 134,
+      "Herbalism": 135,
       "Survival": 55
     }
   },
