@@ -36,8 +36,8 @@
     "class": "Shaman",
     "skills": {
       "First Aid": 1,
-      "Fishing": 75,
-      "Mining": 114,
+      "Fishing": 76,
+      "Mining": 116,
       "Survival": 55
     }
   },
@@ -60,11 +60,11 @@
     "race": "Tauren",
     "class": "Druid",
     "skills": {
-      "Alchemy": 144,
+      "Alchemy": 149,
       "Cooking": 53,
       "First Aid": 83,
-      "Fishing": 128,
-      "Herbalism": 140,
+      "Fishing": 131,
+      "Herbalism": 143,
       "Survival": 55
     }
   },
