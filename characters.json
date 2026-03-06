@@ -12,7 +12,7 @@
       "Leatherworking": 60,
       "Skinning": 191,
       "Survival": 54,
-      "Mining": 69
+      "Mining": 70
     }
   },
   {
@@ -49,8 +49,8 @@
     "class": "Warlock",
     "skills": {
       "Fishing": 1,
-      "Engineering": 45,
-      "Mining": 56
+      "Engineering": 67,
+      "Mining": 57
     }
   },
   {
@@ -132,7 +132,8 @@
     "class": "Rogue",
     "skills": {
       "Fishing": 1,
-      "Mining": 1
+      "Mining": 1,
+      "Engineering": 1
     }
   },
   {
@@ -142,10 +143,10 @@
     "race": "Orc",
     "class": "Warrior",
     "skills": {
-      "Blacksmithing": 35,
+      "Blacksmithing": 45,
       "First Aid": 47,
-      "Mining": 45,
-      "Cooking": 10,
+      "Mining": 50,
+      "Cooking": 17,
       "Fishing": 15
     }
   }
