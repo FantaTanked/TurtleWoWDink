@@ -123,5 +123,12 @@
     "level": 5,
     "race": 10,
     "class": "Paladin"
+  },
+  {
+    "name": "Rogueface",
+    "realm": "Nordanaar",
+    "level": 0,
+    "race": "Unknown",
+    "class": "Unknown"
   }
 ]
