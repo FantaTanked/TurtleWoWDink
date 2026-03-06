@@ -127,14 +127,14 @@
   {
     "name": "Rogueface",
     "realm": "Nordanaar",
-    "level": 3,
+    "level": 4,
     "race": "Troll",
     "class": "Rogue"
   },
   {
     "name": "Rokora",
     "realm": "Nordanaar",
-    "level": 7,
+    "level": 8,
     "race": "Orc",
     "class": "Warrior",
     "skills": {
