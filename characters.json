@@ -129,7 +129,11 @@
     "realm": "Nordanaar",
     "level": 6,
     "race": "Troll",
-    "class": "Rogue"
+    "class": "Rogue",
+    "skills": {
+      "Fishing": 1,
+      "Mining": 1
+    }
   },
   {
     "name": "Rokora",
@@ -138,9 +142,11 @@
     "race": "Orc",
     "class": "Warrior",
     "skills": {
-      "Blacksmithing": 14,
-      "First Aid": 27,
-      "Mining": 22
+      "Blacksmithing": 35,
+      "First Aid": 44,
+      "Mining": 45,
+      "Cooking": 10,
+      "Fishing": 1
     }
   }
 ]
