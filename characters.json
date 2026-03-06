@@ -143,10 +143,10 @@
     "class": "Warrior",
     "skills": {
       "Blacksmithing": 35,
-      "First Aid": 44,
+      "First Aid": 47,
       "Mining": 45,
       "Cooking": 10,
-      "Fishing": 1
+      "Fishing": 15
     }
   }
 ]
