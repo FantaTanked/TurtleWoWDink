@@ -11,7 +11,7 @@
       "Fishing": 107,
       "Leatherworking": 60,
       "Skinning": 191,
-      "Survival": 53,
+      "Survival": 54,
       "Mining": 69
     }
   },
@@ -136,6 +136,11 @@
     "realm": "Nordanaar",
     "level": 7,
     "race": "Orc",
-    "class": "Warrior"
+    "class": "Warrior",
+    "skills": {
+      "Blacksmithing": 6,
+      "First Aid": 7,
+      "Mining": 6
+    }
   }
 ]
