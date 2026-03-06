@@ -138,9 +138,9 @@
     "race": "Orc",
     "class": "Warrior",
     "skills": {
-      "Blacksmithing": 6,
-      "First Aid": 7,
-      "Mining": 6
+      "Blacksmithing": 14,
+      "First Aid": 27,
+      "Mining": 22
     }
   }
 ]
