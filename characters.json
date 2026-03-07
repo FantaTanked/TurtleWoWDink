@@ -145,9 +145,9 @@
     "class": "Warrior",
     "skills": {
       "Blacksmithing": 49,
-      "First Aid": 51,
-      "Mining": 53,
-      "Cooking": 50,
+      "First Aid": 60,
+      "Mining": 54,
+      "Cooking": 55,
       "Fishing": 15
     }
   }
