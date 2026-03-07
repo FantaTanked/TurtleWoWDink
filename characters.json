@@ -12,8 +12,8 @@
       "Leatherworking": 60,
       "Skinning": 207,
       "Survival": 54,
-      "Mining": 76,
-      "Engineering": 1
+      "Mining": 87,
+      "Engineering": 56
     }
   },
   {
@@ -134,8 +134,8 @@
     "class": "Rogue",
     "skills": {
       "Fishing": 1,
-      "Mining": 5,
-      "Engineering": 4
+      "Mining": 46,
+      "Engineering": 25
     }
   },
   {
