@@ -12,7 +12,8 @@
       "Leatherworking": 60,
       "Skinning": 207,
       "Survival": 54,
-      "Mining": 73
+      "Mining": 76,
+      "Engineering": 1
     }
   },
   {
@@ -49,8 +50,8 @@
     "class": "Warlock",
     "skills": {
       "Fishing": 1,
-      "Engineering": 67,
-      "Mining": 59,
+      "Engineering": 80,
+      "Mining": 66,
       "First Aid": 1
     }
   },
@@ -61,7 +62,7 @@
     "race": "Tauren",
     "class": "Druid",
     "skills": {
-      "Alchemy": 180,
+      "Alchemy": 185,
       "Cooking": 53,
       "First Aid": 83,
       "Fishing": 132,
@@ -133,8 +134,8 @@
     "class": "Rogue",
     "skills": {
       "Fishing": 1,
-      "Mining": 1,
-      "Engineering": 1
+      "Mining": 5,
+      "Engineering": 4
     }
   },
   {
@@ -144,10 +145,10 @@
     "race": "Orc",
     "class": "Warrior",
     "skills": {
-      "Blacksmithing": 55,
+      "Blacksmithing": 61,
       "First Aid": 60,
-      "Mining": 63,
-      "Cooking": 55,
+      "Mining": 67,
+      "Cooking": 84,
       "Fishing": 21
     }
   }
