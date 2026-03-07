@@ -50,7 +50,7 @@
     "skills": {
       "Fishing": 1,
       "Engineering": 67,
-      "Mining": 58,
+      "Mining": 59,
       "First Aid": 1
     }
   },
@@ -146,9 +146,9 @@
     "skills": {
       "Blacksmithing": 55,
       "First Aid": 60,
-      "Mining": 61,
+      "Mining": 63,
       "Cooking": 55,
-      "Fishing": 15
+      "Fishing": 21
     }
   }
 ]
