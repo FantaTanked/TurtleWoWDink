@@ -134,8 +134,8 @@
     "class": "Rogue",
     "skills": {
       "Fishing": 1,
-      "Mining": 46,
-      "Engineering": 25
+      "Mining": 50,
+      "Engineering": 30
     }
   },
   {
@@ -147,7 +147,7 @@
     "skills": {
       "Blacksmithing": 61,
       "First Aid": 60,
-      "Mining": 67,
+      "Mining": 68,
       "Cooking": 84,
       "Fishing": 21
     }
