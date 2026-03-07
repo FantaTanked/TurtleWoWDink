@@ -10,9 +10,9 @@
       "First Aid": 2,
       "Fishing": 107,
       "Leatherworking": 60,
-      "Skinning": 206,
+      "Skinning": 207,
       "Survival": 54,
-      "Mining": 70
+      "Mining": 71
     }
   },
   {
@@ -25,7 +25,7 @@
       "Enchanting": 120,
       "Fishing": 1,
       "Survival": 51,
-      "Tailoring": 121
+      "Tailoring": 123
     }
   },
   {
@@ -61,11 +61,11 @@
     "race": "Tauren",
     "class": "Druid",
     "skills": {
-      "Alchemy": 170,
+      "Alchemy": 173,
       "Cooking": 53,
       "First Aid": 83,
       "Fishing": 132,
-      "Herbalism": 149,
+      "Herbalism": 153,
       "Survival": 55
     }
   },
