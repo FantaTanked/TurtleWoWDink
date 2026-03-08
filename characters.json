@@ -82,7 +82,7 @@
       "First Aid": 46,
       "Fishing": 114,
       "Herbalism": 19,
-      "Mining": 14
+      "Mining": 15
     }
   },
   {
@@ -152,7 +152,7 @@
       "First Aid": 99,
       "Mining": 101,
       "Cooking": 84,
-      "Fishing": 31
+      "Fishing": 35
     }
   },
   {
@@ -164,7 +164,8 @@
     "skills": {
       "Fishing": 1,
       "Blacksmithing": 1,
-      "First Aid": 14
+      "First Aid": 14,
+      "Cooking": 1
     }
   }
 ]
