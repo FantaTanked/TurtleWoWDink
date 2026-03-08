@@ -26,7 +26,7 @@
       "Enchanting": 120,
       "Fishing": 1,
       "Survival": 51,
-      "Tailoring": 123
+      "Tailoring": 124
     }
   },
   {
@@ -137,7 +137,7 @@
     "class": "Rogue",
     "skills": {
       "Fishing": 1,
-      "Mining": 65,
+      "Mining": 69,
       "Engineering": 31
     }
   },
@@ -150,7 +150,7 @@
     "skills": {
       "Blacksmithing": 79,
       "First Aid": 99,
-      "Mining": 98,
+      "Mining": 101,
       "Cooking": 84,
       "Fishing": 31
     }
