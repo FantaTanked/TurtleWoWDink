@@ -110,7 +110,10 @@
     "realm": "Nordanaar",
     "level": 8,
     "race": 10,
-    "class": "Paladin"
+    "class": "Paladin",
+    "skills": {
+      "Mining": 1
+    }
   },
   {
     "name": "Profil",
