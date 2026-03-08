@@ -81,7 +81,7 @@
       "Engineering": 1,
       "First Aid": 46,
       "Fishing": 114,
-      "Herbalism": 19,
+      "Herbalism": 22,
       "Mining": 15
     }
   },
@@ -149,8 +149,8 @@
     "class": "Warrior",
     "skills": {
       "Blacksmithing": 79,
-      "First Aid": 99,
-      "Mining": 101,
+      "First Aid": 109,
+      "Mining": 102,
       "Cooking": 84,
       "Fishing": 35
     }
