@@ -80,7 +80,7 @@
       "Cooking": 1,
       "Engineering": 1,
       "First Aid": 46,
-      "Fishing": 107,
+      "Fishing": 114,
       "Herbalism": 19,
       "Mining": 14
     }
@@ -137,8 +137,8 @@
     "class": "Rogue",
     "skills": {
       "Fishing": 1,
-      "Mining": 52,
-      "Engineering": 30
+      "Mining": 58,
+      "Engineering": 31
     }
   },
   {
@@ -148,7 +148,7 @@
     "race": "Orc",
     "class": "Warrior",
     "skills": {
-      "Blacksmithing": 77,
+      "Blacksmithing": 79,
       "First Aid": 99,
       "Mining": 98,
       "Cooking": 84,
@@ -162,7 +162,9 @@
     "race": "Human",
     "class": "Warrior",
     "skills": {
-      "Fishing": 1
+      "Fishing": 1,
+      "Blacksmithing": 1,
+      "First Aid": 1
     }
   }
 ]
