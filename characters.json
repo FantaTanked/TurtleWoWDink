@@ -112,7 +112,9 @@
     "race": 10,
     "class": "Paladin",
     "skills": {
-      "Mining": 9
+      "Mining": 16,
+      "Blacksmithing": 1,
+      "Cooking": 1
     }
   },
   {
@@ -150,7 +152,7 @@
     "skills": {
       "Blacksmithing": 79,
       "First Aid": 118,
-      "Mining": 105,
+      "Mining": 108,
       "Cooking": 119,
       "Fishing": 35
     }
