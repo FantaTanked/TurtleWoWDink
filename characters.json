@@ -81,7 +81,7 @@
       "Engineering": 1,
       "First Aid": 80,
       "Fishing": 114,
-      "Herbalism": 24,
+      "Herbalism": 25,
       "Mining": 15
     }
   },
@@ -112,8 +112,8 @@
     "race": 10,
     "class": "Paladin",
     "skills": {
-      "Mining": 20,
-      "Blacksmithing": 7,
+      "Mining": 28,
+      "Blacksmithing": 11,
       "Cooking": 1,
       "Fishing": 1
     }
@@ -153,7 +153,7 @@
     "skills": {
       "Blacksmithing": 80,
       "First Aid": 127,
-      "Mining": 108,
+      "Mining": 111,
       "Cooking": 119,
       "Fishing": 35
     }
