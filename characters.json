@@ -112,9 +112,10 @@
     "race": 10,
     "class": "Paladin",
     "skills": {
-      "Mining": 16,
-      "Blacksmithing": 1,
-      "Cooking": 1
+      "Mining": 20,
+      "Blacksmithing": 7,
+      "Cooking": 1,
+      "Fishing": 1
     }
   },
   {
@@ -150,8 +151,8 @@
     "race": "Orc",
     "class": "Warrior",
     "skills": {
-      "Blacksmithing": 79,
-      "First Aid": 118,
+      "Blacksmithing": 80,
+      "First Aid": 127,
       "Mining": 108,
       "Cooking": 119,
       "Fishing": 35
