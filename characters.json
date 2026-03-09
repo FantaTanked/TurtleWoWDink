@@ -23,7 +23,7 @@
     "race": "Troll",
     "class": "Priest",
     "skills": {
-      "Enchanting": 120,
+      "Enchanting": 121,
       "Fishing": 1,
       "Survival": 51,
       "Tailoring": 124
@@ -38,7 +38,7 @@
     "skills": {
       "First Aid": 1,
       "Fishing": 81,
-      "Mining": 122,
+      "Mining": 125,
       "Survival": 57
     }
   },
@@ -79,7 +79,7 @@
     "skills": {
       "Cooking": 1,
       "Engineering": 1,
-      "First Aid": 80,
+      "First Aid": 81,
       "Fishing": 114,
       "Herbalism": 25,
       "Mining": 16
@@ -152,8 +152,8 @@
     "class": "Warrior",
     "skills": {
       "Blacksmithing": 80,
-      "First Aid": 135,
-      "Mining": 120,
+      "First Aid": 137,
+      "Mining": 125,
       "Cooking": 121,
       "Fishing": 35
     }
@@ -167,7 +167,7 @@
     "skills": {
       "Fishing": 1,
       "Blacksmithing": 1,
-      "First Aid": 43,
+      "First Aid": 55,
       "Cooking": 36
     }
   }
