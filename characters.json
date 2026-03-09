@@ -26,7 +26,7 @@
       "Enchanting": 121,
       "Fishing": 1,
       "Survival": 51,
-      "Tailoring": 124
+      "Tailoring": 125
     }
   },
   {
@@ -38,8 +38,8 @@
     "skills": {
       "First Aid": 1,
       "Fishing": 81,
-      "Mining": 125,
-      "Survival": 57
+      "Mining": 126,
+      "Survival": 59
     }
   },
   {
@@ -51,7 +51,7 @@
     "skills": {
       "Fishing": 1,
       "Engineering": 80,
-      "Mining": 66,
+      "Mining": 67,
       "First Aid": 1
     }
   },
