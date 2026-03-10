@@ -170,5 +170,12 @@
       "First Aid": 55,
       "Cooking": 36
     }
+  },
+  {
+    "name": "hunterface",
+    "realm": "Nordanaar",
+    "level": 0,
+    "race": "Unknown",
+    "class": "Unknown"
   }
 ]
