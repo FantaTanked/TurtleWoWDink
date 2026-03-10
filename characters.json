@@ -26,7 +26,7 @@
       "Enchanting": 121,
       "Fishing": 1,
       "Survival": 51,
-      "Tailoring": 125
+      "Tailoring": 127
     }
   },
   {
@@ -38,7 +38,7 @@
     "skills": {
       "First Aid": 1,
       "Fishing": 81,
-      "Mining": 126,
+      "Mining": 130,
       "Survival": 59
     }
   },
@@ -151,10 +151,10 @@
     "race": "Orc",
     "class": "Warrior",
     "skills": {
-      "Blacksmithing": 80,
-      "First Aid": 137,
-      "Mining": 125,
-      "Cooking": 121,
+      "Blacksmithing": 81,
+      "First Aid": 140,
+      "Mining": 126,
+      "Cooking": 136,
       "Fishing": 35
     }
   },
