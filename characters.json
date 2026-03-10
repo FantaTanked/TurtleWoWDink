@@ -38,7 +38,7 @@
     "skills": {
       "First Aid": 1,
       "Fishing": 81,
-      "Mining": 150,
+      "Mining": 151,
       "Survival": 59
     }
   },
@@ -152,9 +152,9 @@
     "class": "Warrior",
     "skills": {
       "Blacksmithing": 81,
-      "First Aid": 149,
-      "Mining": 128,
-      "Cooking": 136,
+      "First Aid": 150,
+      "Mining": 131,
+      "Cooking": 150,
       "Fishing": 35
     }
   },
