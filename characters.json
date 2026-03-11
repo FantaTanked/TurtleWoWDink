@@ -26,7 +26,7 @@
       "Enchanting": 121,
       "Fishing": 1,
       "Survival": 51,
-      "Tailoring": 136
+      "Tailoring": 140
     }
   },
   {
@@ -82,7 +82,7 @@
       "First Aid": 81,
       "Fishing": 114,
       "Herbalism": 25,
-      "Mining": 18,
+      "Mining": 19,
       "Survival": 51
     }
   },
@@ -154,7 +154,7 @@
     "skills": {
       "Blacksmithing": 81,
       "First Aid": 150,
-      "Mining": 137,
+      "Mining": 144,
       "Cooking": 150,
       "Fishing": 35
     }
