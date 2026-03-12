@@ -7,7 +7,7 @@
     "class": "Hunter",
     "skills": {
       "Cooking": 90,
-      "First Aid": 2,
+      "First Aid": 9,
       "Fishing": 107,
       "Leatherworking": 60,
       "Skinning": 207,
@@ -23,10 +23,10 @@
     "race": "Troll",
     "class": "Priest",
     "skills": {
-      "Enchanting": 121,
+      "Enchanting": 123,
       "Fishing": 1,
       "Survival": 51,
-      "Tailoring": 150
+      "Tailoring": 151
     }
   },
   {
@@ -153,7 +153,7 @@
     "class": "Warrior",
     "skills": {
       "Blacksmithing": 81,
-      "First Aid": 155,
+      "First Aid": 159,
       "Mining": 147,
       "Cooking": 150,
       "Fishing": 35
