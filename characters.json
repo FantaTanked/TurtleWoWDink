@@ -12,7 +12,7 @@
       "Leatherworking": 60,
       "Skinning": 207,
       "Survival": 54,
-      "Mining": 104,
+      "Mining": 105,
       "Engineering": 136
     }
   },
@@ -153,8 +153,8 @@
     "class": "Warrior",
     "skills": {
       "Blacksmithing": 81,
-      "First Aid": 150,
-      "Mining": 145,
+      "First Aid": 155,
+      "Mining": 147,
       "Cooking": 150,
       "Fishing": 35
     }
