@@ -23,7 +23,7 @@
     "race": "Troll",
     "class": "Priest",
     "skills": {
-      "Enchanting": 123,
+      "Enchanting": 124,
       "Fishing": 1,
       "Survival": 51,
       "Tailoring": 153
@@ -38,7 +38,7 @@
     "skills": {
       "First Aid": 1,
       "Fishing": 87,
-      "Mining": 204,
+      "Mining": 206,
       "Survival": 59
     }
   },
@@ -141,7 +141,7 @@
     "class": "Rogue",
     "skills": {
       "Fishing": 1,
-      "Mining": 69,
+      "Mining": 70,
       "Engineering": 31
     }
   },
