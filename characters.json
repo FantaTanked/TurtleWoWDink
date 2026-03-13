@@ -12,7 +12,7 @@
       "Leatherworking": 60,
       "Skinning": 207,
       "Survival": 54,
-      "Mining": 108,
+      "Mining": 113,
       "Engineering": 136
     }
   },
@@ -26,7 +26,7 @@
       "Enchanting": 124,
       "Fishing": 1,
       "Survival": 51,
-      "Tailoring": 153
+      "Tailoring": 154
     }
   },
   {
@@ -142,7 +142,9 @@
     "skills": {
       "Fishing": 1,
       "Mining": 70,
-      "Engineering": 31
+      "Engineering": 31,
+      "Herbalism": 2,
+      "Skinning": 1
     }
   },
   {
