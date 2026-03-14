@@ -12,7 +12,7 @@
       "Leatherworking": 60,
       "Skinning": 207,
       "Survival": 54,
-      "Mining": 150,
+      "Mining": 155,
       "Engineering": 178
     }
   },
@@ -38,7 +38,7 @@
     "skills": {
       "First Aid": 1,
       "Fishing": 87,
-      "Mining": 210,
+      "Mining": 211,
       "Survival": 59
     }
   },
@@ -156,7 +156,7 @@
     "skills": {
       "Blacksmithing": 81,
       "First Aid": 159,
-      "Mining": 148,
+      "Mining": 152,
       "Cooking": 150,
       "Fishing": 35,
       "Survival": 51
