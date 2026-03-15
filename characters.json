@@ -182,5 +182,12 @@
     "level": 6,
     "race": "Night Elf",
     "class": "Hunter"
+  },
+  {
+    "name": "JImmylockman",
+    "realm": "Nordanaar",
+    "level": 0,
+    "race": "Unknown",
+    "class": "Unknown"
   }
 ]
