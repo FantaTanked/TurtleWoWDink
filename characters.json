@@ -23,10 +23,10 @@
     "race": "Troll",
     "class": "Priest",
     "skills": {
-      "Enchanting": 124,
+      "Enchanting": 127,
       "Fishing": 1,
       "Survival": 51,
-      "Tailoring": 158
+      "Tailoring": 159
     }
   },
   {
@@ -37,7 +37,7 @@
     "class": "Shaman",
     "skills": {
       "First Aid": 1,
-      "Fishing": 109,
+      "Fishing": 111,
       "Mining": 212,
       "Survival": 59
     }
@@ -82,7 +82,7 @@
       "First Aid": 81,
       "Fishing": 114,
       "Herbalism": 30,
-      "Mining": 20,
+      "Mining": 21,
       "Survival": 51
     }
   },
@@ -143,8 +143,8 @@
       "Fishing": 1,
       "Mining": 70,
       "Engineering": 31,
-      "Herbalism": 68,
-      "Skinning": 176,
+      "Herbalism": 70,
+      "Skinning": 183,
       "First Aid": 6
     }
   },
@@ -156,8 +156,8 @@
     "class": "Warrior",
     "skills": {
       "Blacksmithing": 81,
-      "First Aid": 177,
-      "Mining": 161,
+      "First Aid": 180,
+      "Mining": 166,
       "Cooking": 159,
       "Fishing": 38,
       "Survival": 51
@@ -191,7 +191,9 @@
     "class": "Warlock",
     "skills": {
       "Cooking": 1,
-      "Fishing": 1
+      "Fishing": 1,
+      "Enchanting": 11,
+      "Tailoring": 48
     }
   }
 ]
