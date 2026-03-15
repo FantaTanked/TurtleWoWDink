@@ -37,7 +37,7 @@
     "class": "Shaman",
     "skills": {
       "First Aid": 1,
-      "Fishing": 98,
+      "Fishing": 109,
       "Mining": 212,
       "Survival": 59
     }
@@ -81,7 +81,7 @@
       "Engineering": 1,
       "First Aid": 81,
       "Fishing": 114,
-      "Herbalism": 29,
+      "Herbalism": 30,
       "Mining": 20,
       "Survival": 51
     }
@@ -143,8 +143,8 @@
       "Fishing": 1,
       "Mining": 70,
       "Engineering": 31,
-      "Herbalism": 67,
-      "Skinning": 171,
+      "Herbalism": 68,
+      "Skinning": 176,
       "First Aid": 6
     }
   },
@@ -156,8 +156,8 @@
     "class": "Warrior",
     "skills": {
       "Blacksmithing": 81,
-      "First Aid": 164,
-      "Mining": 154,
+      "First Aid": 177,
+      "Mining": 161,
       "Cooking": 159,
       "Fishing": 38,
       "Survival": 51
@@ -188,6 +188,10 @@
     "realm": "Nordanaar",
     "level": 8,
     "race": "Orc",
-    "class": "Warlock"
+    "class": "Warlock",
+    "skills": {
+      "Cooking": 1,
+      "Fishing": 1
+    }
   }
 ]
