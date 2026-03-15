@@ -143,7 +143,7 @@
       "Fishing": 1,
       "Mining": 70,
       "Engineering": 31,
-      "Herbalism": 63,
+      "Herbalism": 66,
       "Skinning": 171
     }
   },
@@ -157,7 +157,7 @@
       "Blacksmithing": 81,
       "First Aid": 159,
       "Mining": 154,
-      "Cooking": 150,
+      "Cooking": 159,
       "Fishing": 35,
       "Survival": 51
     }
